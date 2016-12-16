@@ -1,0 +1,12 @@
+## Dependency directorys
+node_modules
+bower_components
+npm-debug.log
+
+# Bundle files
+client/public/bundle.js
+client/public
+bundle.js
+
+###OSX###
+.DS_Store
