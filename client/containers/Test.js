@@ -24,7 +24,6 @@ function mapStateToProps(state){
   return {};
 }
 
-//binds action and container
 function mapDispatchToProps(dispatch){
   return bindActionCreators({  }, dispatch);
 }

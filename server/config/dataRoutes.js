@@ -3,33 +3,66 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
-var fs = require('fs');
+let fs = require('fs');
 
 router.post('/dataJSON', (req, res) => {
+  let title;
+  let symb;
+  let symbol = req.body.symbol;
+  let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
+  console.log(JSONData, ' json data');
 
-  // let symbol = req.body.symbol;
-  // let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
-  // fs.writeFile('./data/stock-data.json', 'helllo', function(err){
-  //   if(err) return console.log(err);
-  //   console.log('Wrote to JSON')
+  // const url = `https://api.stocktwits.com/api/2/streams/symbol/${symbol}.json`;
+  // request(url, (err, response, body) => {
+  //   if (err) throw new Error(err);
+  //   console.log(response, ' RESPONSE BODY!!!!')
+  //   console.log(body.symbol, 'request body!!!');
+  //   // symb = body.symbol.symbol;
+  //   // title = body.symbol.title;
+  //   // res.send(body);
   // })
-  // request(db, (err, response, body))
 
+
+  if(JSONData.length < 5){
+      JSONData.push({symbol:symbol, title:title});
+    fs.writeFile('./data/stock-data.json', JSON.stringify(JSONData, null, 2), 'utf-8', function (err) {
+      if (err) {
+        console.error(err);
+      } else {
+         res.sendStatus(200);
+      }
+    });
+  } else {
+    res.sendStatus(200)
+  }
 });
 
 
 router.get('/dataJSON', (req, res) => {
-  // console.log(req.query, 'is my req.body /stock')
-  // let symb = req.query.symbol;
-  // console.log(symb, ' is my symbol')
-  // const url = `https://api.stocktwits.com/api/2/streams/symbol/${symb}.json`;
-  // console.log(url, 'is my url')
-  // request(url, (err, response, body) => {
-  //   if (err) throw new Error(err);
-  //   console.log(body, 'request body');
-  //   res.send(body);
-  // })
-
+  let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
+  res.send(JSONData);
 });
 
+
+router.delete('/dataJSON/:symb', (req, res) => {
+  let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
+  let id = req.params.symb;
+  console.log(JSONData, ' JSON DATA');
+  console.log(id, ' deleting ID');
+  JSONData.splice(id, 1);
+
+  fs.writeFile('./data/stock-data.json', JSON.stringify(JSONData, null, 2), 'utf-8', function (err) {
+    if (err) {
+      console.error(err);
+    } else {
+       res.sendStatus(200);
+    }
+  });
+})
+
+
+
 module.exports = router;
+
+
+

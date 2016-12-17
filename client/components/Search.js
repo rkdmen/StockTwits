@@ -6,7 +6,7 @@ import StockDetail from '../containers/StockSearch/StockSearchAdd';
 class Search extends React.Component {
   render(){
     return (
-        <div>
+        <div className="main-search" >
           <StockDetail />
           <StockSearchAdd />
         </div>

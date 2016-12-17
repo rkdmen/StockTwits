@@ -2,44 +2,57 @@ import React, {Component} from 'react';
 import { FormControl, Button, Form } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { addStock, addStockToJSON } from '../../actions/searchActions';
+import { getSymbolJSON, retriveMsg, addStockToJSON } from '../../actions/searchActions';
 
 class StockSearchAdd extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          symbol: ''
+          symbol: '',
+          currentStock: '',
+          title: ''
         }
       this.onInputChange = this.onInputChange.bind(this);
       this.onFormSubmit = this.onFormSubmit.bind(this)
     }
 
-    componentDidMount() {
-    }
-
     onInputChange(e){
      e.preventDefault();
      this.setState({symbol: e.target.value});
+     console.log(this.state, ' *****')
+
     }
 
     onFormSubmit(e){
      e.preventDefault();
-     this.props.addStock(this.state.symbol)
-     this.props.addStockToJSON(this.state.symbol)
-     console.log('submitting', this.state.symbol);
-     this.setState({symbol: ''});
-
+     console.log(this.state, ' *****')
+     this.props.retriveMsg(this.state.symbol)
+     .then(()=>{
+       this.props.addStockToJSON(this.state.symbol.toUpperCase())
+     })
+     .then(()=>{
+       this.setState({symbol:''});
+     })
+     .then(()=>{
+       this.props.getSymbolJSON();
+     })
+     .catch((err) => console.log(err))
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //   console.log(nextProps, ' StockSearchAdd Next Prop');
+    //   this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title})
+    // }
 
     render() {
         return (
-          <Form  onSubmit={this.onFormSubmit} inline>
+          <Form onSubmit={this.onFormSubmit} inline>
             <FormControl
-            className='searchBar'
-            placeholder="Search SYMBOL"
-            onChange={this.onInputChange}
-            value={this.state.symbol}
-            type="text"
+              className='searchBar'
+              placeholder="Search SYMBOL"
+              onChange={this.onInputChange}
+              value={this.state.symbol}
+              type="text"
             />
             <Button type="submit" bsStyle="primary"> Watch </Button>
           </Form>
@@ -48,13 +61,14 @@ class StockSearchAdd extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state, ' stockSearchAdd State');
     return {
-
+      stock: state.reducer.stock
     }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addStock, addStockToJSON }, dispatch);
+  return bindActionCreators({ getSymbolJSON, retriveMsg, addStockToJSON }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockSearchAdd);

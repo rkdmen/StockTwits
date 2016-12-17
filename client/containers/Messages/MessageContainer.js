@@ -9,16 +9,28 @@ import {  } from '../../actions/searchActions';
 class Message extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+          currentStock: '',
+          title: ''
+        }
     }
 
     componentDidMount() {
     }
 
+    componentWillReceiveProps(nextProps) {
+      console.log(nextProps, ' Message Next Prop');
+      this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title});
+    }
     render() {
+    let showTitle;
+    if(this.state.title){
+      showTitle = (<h4>{this.state.title}, {this.state.currentStock}</h4>)
+    }
         return (
           <div>
-          { !this.props.message ? 'No Stock Selected':
+          {showTitle}
+          {!this.props.message ? 'No Stock Selected':
             this.props.message.map((msg, i)=>{
              return (
                <MessageDetails
@@ -39,7 +51,8 @@ class Message extends Component {
 function mapStateToProps(state) {
   console.log(state, ' Message state')
     return {
-      message: state.reducer.stock.messages
+      message: state.reducer.stock.messages,
+      stock: state.reducer.stock
     }
 }
 
