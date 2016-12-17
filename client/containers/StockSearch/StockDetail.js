@@ -16,13 +16,14 @@ class StockDetail extends Component {
     render() {
         return (
           <div>
-            StockDetail
+
           </div>
           )
     }
 }
 
 function mapStateToProps(state) {
+  console.log(state, ' stockdetail state')
     return {
 
     }

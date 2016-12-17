@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search';
+import Message from './Message';
 
 class Main extends React.Component {
   constructor(props){
@@ -13,6 +14,7 @@ class Main extends React.Component {
     return (
           <div>
            <Search />
+           <Message />
           </div>
       )
   }

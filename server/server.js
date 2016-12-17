@@ -20,9 +20,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(logger('dev'));
 app.use(cookieParser());
 
-
-
-// app.use('/api', );
+const dataRoutes = require('./config/dataRoutes');
+const stockRoutes = require('./config/stockRoutes');
+app.use('/api', dataRoutes);
+app.use('/api', stockRoutes);
 
 
 // webpack loads index.html, looks for script src
@@ -31,7 +32,6 @@ app.get('/public/bundle.js', function(req, res){
 });
 
 app.get('*', function(req, res){
-  console.log('REQ.URL IS: ', req.url);
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 

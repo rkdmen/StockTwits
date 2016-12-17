@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { FormControl, Button, Form } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {  } from '../../actions/searchActions';
+import { addStock, addStockToJSON } from '../../actions/searchActions';
 
 class StockSearchAdd extends Component {
     constructor(props) {
@@ -24,7 +24,8 @@ class StockSearchAdd extends Component {
 
     onFormSubmit(e){
      e.preventDefault();
-
+     this.props.addStock(this.state.symbol)
+     this.props.addStockToJSON(this.state.symbol)
      console.log('submitting', this.state.symbol);
      this.setState({symbol: ''});
 
@@ -53,7 +54,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators({ addStock, addStockToJSON }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockSearchAdd);
