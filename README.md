@@ -20,6 +20,8 @@ User may keep searching message for new ticker after 5 saved ticker, but it will
   - JSON
 
 ### How to use Application:
+Deployed Version [Heroku](https:///stocktwits-app.herokuapp.com/)
+
 - Download Repo
   - run npm install
   - run npm start
