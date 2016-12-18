@@ -23,10 +23,10 @@ class Message extends Component {
       this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title});
     }
     render() {
-    let showTitle;
-    if(this.state.title){
-      showTitle = (<h4>{this.state.title}, {this.state.currentStock}</h4>)
-    }
+     let showTitle;
+      if(this.state.title){
+        showTitle = (<h4>{this.state.title}, {this.state.currentStock}</h4>);
+      }
         return (
           <div>
           {showTitle}

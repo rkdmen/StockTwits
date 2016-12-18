@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import rootReducer from './reducers/index';
 import createLogger from 'redux-logger';
@@ -18,7 +17,7 @@ const store = createStore(
         reducer: rootReducer,
         routing: routerReducer
     }),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    applyMiddleware(thunk, promise, logger)
+    applyMiddleware(promise, logger)
 )
 
 

@@ -39,14 +39,10 @@ class StockSearchAdd extends Component {
      .catch((err) => console.log(err))
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //   console.log(nextProps, ' StockSearchAdd Next Prop');
-    //   this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title})
-    // }
 
     render() {
         return (
-          <Form onSubmit={this.onFormSubmit} inline>
+          <Form onSubmit={this.onFormSubmit} >
             <FormControl
               className='searchBar'
               placeholder="Search SYMBOL"
@@ -54,7 +50,6 @@ class StockSearchAdd extends Component {
               value={this.state.symbol}
               type="text"
             />
-            <Button type="submit" bsStyle="primary"> Watch </Button>
           </Form>
           )
     }

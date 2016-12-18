@@ -47,7 +47,6 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.1.0",
     "request": "^2.78.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",

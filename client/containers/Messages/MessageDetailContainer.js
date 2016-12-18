@@ -17,9 +17,9 @@ class MessageDetails extends Component {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-      console.log(nextProps, ' MessageDetail Next Prop');
-    }
+    // componentWillReceiveProps(nextProps) {
+    //   console.log(nextProps, ' MessageDetail Next Prop');
+    // }
 
     render() {
     const UTCtoLocal = (dateInput) => {
@@ -43,7 +43,7 @@ class MessageDetails extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state, ' MessageDetails state')
+  // console.log(state, ' MessageDetails state')
     return {
     }
 }

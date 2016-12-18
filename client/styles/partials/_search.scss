@@ -1,14 +1,59 @@
 .main-search {
-  border: thin grey solid;
-  width:80%
+  width:100%;
 }
 
 .searchBar {
   width: 100%
 }
 
-.stockSymbol {
-  text-align: center;
+.symbolList {
+  // display:inline;
+  margin-top: 4px;
+  background-color: #4DAF7C;
+  color: #FFFFFF;
+  width: 100%;
+  height: auto;
+  font-family: Helvetica;
   font-size: 16px;
-  margin: 5px 0;
+  font-weight: 300;
+
+  a {
+    display: block;
+    padding: 0 0 0 50px;
+    line-height: 38px;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .delBtn {
+    width:100%;
+    color:red;
+    opacity:.5 !important;
+    &:hover{
+      background: #7EC29C;
+      opacity:1 !important;
+      cursor: pointer;
+    }
+  }
+
+    span {
+      display:inline-block;
+    }
+    span.left {
+      width:80%;
+      &:hover {
+      background: #7EC29C;
+      color: #FFFFFF;
+      cursor: pointer;
+     }
+    }
+    span.right {
+      width:20%;
+      text-align:left;
+    }
+    span a {
+      width:100%;
+      font-size:16px;
+    }
 }
+

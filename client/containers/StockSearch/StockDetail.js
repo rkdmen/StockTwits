@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Button, ButtonToolbar, Panel } from 'react-bootstrap';
+import { Button, ButtonToolbar, ButtonGroup, Panel,  Col, Row, Grid } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getSymbolJSON, deleteSymbolJSON } from '../../actions/searchActions';
+import { retriveMsg, getSymbolJSON, deleteSymbolJSON } from '../../actions/searchActions';
 
 class StockDetail extends Component {
     constructor(props) {
@@ -10,47 +10,54 @@ class StockDetail extends Component {
         this.state = {
           "watchList":[]
         }
-    this.deleteStockJSON = this.deleteStockJSON.bind(this);
+      this.deleteStockJSON = this.deleteStockJSON.bind(this);
+      this.onItemClick = this.onItemClick.bind(this);
     }
 
     componentDidMount() {
       this.props.getSymbolJSON();
     }
 
-  componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
       console.log(nextProps, ' nextProp StockDetail')
       this.setState({watchList:nextProps.mySymbol})
-  }
+    }
 
-  deleteStockJSON(e){
-    this.props.deleteSymbolJSON(e.target.value)
-    .then(()=>{
-      this.props.getSymbolJSON();
-    })
+    deleteStockJSON(e){
+      this.props.deleteSymbolJSON(e)
+      .then(()=>{
+        this.props.getSymbolJSON();
+      })
+    }
 
-  }
+    onItemClick(event) {
+      this.props.retriveMsg(event);
+    }
+
     render() {
       console.log(this.state, ' this.state stockdetail')
         return (
-          <form  className="panel-default">
+          <div className='symbolList'>
             {
               this.state.watchList.map((stock, i)=>{
                 return (
                   <div className="stockSymbol" key={i}>
-                  {stock.symbol}&nbsp;&nbsp;
-                    <span>
-                        <Button onClick={this.deleteStockJSON} value={i} bsStyle='danger' bsSize="xsmall"> X </Button>
-                    </span>
-                    <hr/>
+                      <span className="left">
+                      <a value={stock.symbol} href="#" onClick={()=> this.onItemClick(stock.symbol)}>{stock.symbol}&nbsp;&nbsp;
+                      </a>
+                      </span>
+                      <span className="right">
+                       <a className="delBtn" href="#" onClick={()=>this.deleteStockJSON(i)} value={i}> X </a>
+                       </span>
                   </div>
+
                   )
               })
             }
-          </form>
+          </div>
           )
     }
 }
-
 function mapStateToProps(state) {
   console.log(state, ' stockdetail state');
     return {
@@ -59,7 +66,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getSymbolJSON, deleteSymbolJSON }, dispatch);
+  return bindActionCreators({ retriveMsg, getSymbolJSON, deleteSymbolJSON }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StockDetail);

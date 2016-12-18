@@ -4,10 +4,10 @@ export function stockReducer(state = {}, action) {
   console.log(action.payload, ' payload!')
     switch (action.type) {
       case type.RETRIEVE_MSG:
-          if(!action.payload.data.symbol){
-            return Object.assign({}, state, {
-              })
-          };
+          // if(!action.payload.data.symbol){
+          //   return Object.assign({}, state, {
+          //     })
+          // };
           return Object.assign({}, state, {
             symbol: action.payload.data.symbol.symbol,
             title: action.payload.data.symbol.title,
