@@ -1,21 +1,38 @@
 //Action Creator test
 import {renderComponent, expect} from '../test_helper';
-import * as actionCreator from '../../client/actions/searchActions';
-import * as ActionType from '../../client/constants/actionTypes';
-// RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON
+import {retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON} from '../../client/actions/searchActions';
+import {RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON}from '../../client/constants/actionTypes';
+//ActionCreator retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON
+
+// ActionTypes = RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON
 
 
 describe('actions', ()=> {
-  describe('', ()=>{
-
+  describe('retriveMsg', ()=>{
     it('has the correct type', ()=> {
-      const action = someAction('RETRIEVE_MSG');
-      expect(ActionType.RETRIEVE_MSG).to.equal('RETRIEVE_MSG')
+      const action = retriveMsg();
+      expect(action.type).to.equal(RETRIEVE_MSG)
     });
-
-    // it('has the correct payload', ()=> {
-    //   const action = someAction('some value');
-    //   expect(actionCreator.payload).to.equal(YourConstant)
-    // });
   });
+
+  describe('addStockToJSON', ()=>{
+    it('has the correct type', ()=> {
+      const action = addStockToJSON();
+      expect(action.type).to.equal(ADD_STOCK_JSON)
+    });
+  });
+  describe('getSymbolJSON', ()=>{
+    it('has the correct type', ()=> {
+      const action = getSymbolJSON();
+      expect(action.type).to.equal(GET_STOCK_JSON)
+    });
+  });
+  describe('deleteSymbolJSON', ()=>{
+    it('has the correct type', ()=> {
+      const action = deleteSymbolJSON();
+      expect(action.type).to.equal(DELETE_STOCK_JSON)
+    });
+  });
+
+
 })

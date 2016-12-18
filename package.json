@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon server/server.js --ignore 'data/*'",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
     "postinstall": "webpack --config ./webpack.config.js --progress --colors"
 
   },
