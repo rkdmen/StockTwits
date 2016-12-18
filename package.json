@@ -5,7 +5,9 @@
   "main": "server/server.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "postinstall": "webpack --config ./webpack.config.js --progress --colors"
+
   },
   "repository": {
     "type": "git",
@@ -61,7 +63,6 @@
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
     "chai-jquery": "^2.0.0",
-    "commitizen": "^2.8.6",
     "css-loader": "^0.25.0",
     "ignore-styles": "^5.0.1",
     "jquery": "^2.2.1",
