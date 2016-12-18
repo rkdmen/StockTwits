@@ -3,8 +3,6 @@ import { Button, Panel } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MessageDetails from './MessageDetailContainer' ;
-import {  } from '../../actions/searchActions';
-
 
 class MessageContainer extends Component {
     constructor(props) {
@@ -34,6 +32,7 @@ class MessageContainer extends Component {
                message={msg.body}
                user={msg.user.username}
                time={msg.created_at}
+               avatar={msg.user.avatar_url}
                key={i}
                />
               )
@@ -53,8 +52,5 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer);
+export default connect(mapStateToProps, null)(MessageContainer);

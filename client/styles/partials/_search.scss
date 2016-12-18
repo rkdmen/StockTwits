@@ -1,3 +1,5 @@
+@import '../modules/variables';
+
 .main-search {
   width:100%;
 }
@@ -9,7 +11,7 @@
 .symbolList {
   // display:inline;
   margin-top: 4px;
-  background-color: #4DAF7C;
+  background-color: $moneyGreen;
   color: #FFFFFF;
   width: 100%;
   height: auto;
@@ -29,6 +31,8 @@
     width:100%;
     color:red;
     opacity:.5 !important;
+    text-align:center;
+    padding-left:0px;
     &:hover{
       background: #7EC29C;
       opacity:1 !important;

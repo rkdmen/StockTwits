@@ -24,10 +24,11 @@ class MessageDetails extends Component {
         return etc.toLocaleString();
       }
         return (
-          <div>
-            <h5>{this.props.user}</h5>
+          <div className="messageDetail">
+            <h5>User: {this.props.user}</h5>
+            <span><img src={this.props.avatar} alt="avatar"/></span>
             <p>{this.props.message}</p>
-            <p>{UTCtoLocal(this.props.time)}</p>
+            <h6>{UTCtoLocal(this.props.time)}</h6>
             <hr/>
           </div>
           )

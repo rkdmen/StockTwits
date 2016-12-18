@@ -7,10 +7,6 @@ class Main extends React.Component {
   constructor(props){
     super(props);
   }
-  componentWillMount(){
-   console.log('Main Component Mounted')
-  }
-
   render(){
     return (
           <Grid>
@@ -25,7 +21,6 @@ class Main extends React.Component {
           </Grid>
       )
   }
-
 }
 
 

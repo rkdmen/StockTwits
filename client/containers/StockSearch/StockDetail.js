@@ -50,11 +50,11 @@ class StockDetail extends Component {
                 return (
                   <div className="stockSymbol" key={i}>
                       <span className="left">
-                      <a value={stock.symbol} href="#" onClick={()=> this.onItemClick(stock.symbol)}>{stock.symbol}&nbsp;&nbsp;
+                      <a value={stock.symbol} href="#" onClick={()=> this.onItemClick(stock.symbol)}>{stock.symbol}
                       </a>
                       </span>
                       <span className="right">
-                       <a className="delBtn" href="#" onClick={()=>this.deleteStockJSON(i)} value={i}> X </a>
+                       <a className="delBtn" href="#" onClick={()=>this.deleteStockJSON(i)} value={i}>X</a>
                        </span>
                   </div>
 

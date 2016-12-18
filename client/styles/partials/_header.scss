@@ -1,0 +1,21 @@
+@import '../modules/variables';
+
+.header {
+    color:white;
+    padding-top: 10px;
+    background: #3A5359;
+    height: 50px;
+    left:0;
+    top:0;
+    position:relative;
+    margin:0 auto;
+}
+
+.emptySpace {
+    height:10px;
+    clear:both;
+}
+
+.font-stock {
+    color:$moneyGreen;
+}
