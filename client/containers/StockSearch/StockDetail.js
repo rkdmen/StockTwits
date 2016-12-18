@@ -8,7 +8,7 @@ class StockDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          "watchList":[]
+          watchList:[]
         }
       this.deleteStockJSON = this.deleteStockJSON.bind(this);
       this.onItemClick = this.onItemClick.bind(this);
@@ -35,9 +35,16 @@ class StockDetail extends Component {
     }
 
     render() {
+      let emptyWatchList;
+      if(this.state.watchList.length === 0){
+        emptyWatchList = (<h4 className='watchListEmpty'>Watchlist is Empty</h4>);
+      } else {
+        emptyWatchList;
+      }
       console.log(this.state, ' this.state stockdetail')
         return (
           <div className='symbolList'>
+            {emptyWatchList}
             {
               this.state.watchList.map((stock, i)=>{
                 return (

@@ -10,26 +10,18 @@ class MessageDetails extends Component {
         super(props);
         this.state = {}
         // console.log(this.props, ' this props in messageDetail')
-
     }
-
-    componentDidMount() {
-
-    }
-
-    // componentWillReceiveProps(nextProps) {
-    //   console.log(nextProps, ' MessageDetail Next Prop');
-    // }
 
     render() {
-    const UTCtoLocal = (dateInput) => {
-      let offset = 5; // EST - UTC offset: 5 hours
-      let date = new Date(dateInput);
-      let utc = date.getTime() - (date.getTimezoneOffset() * 60000);
-        //apply the offset between UTC and EST (5 hours)
-        //3600000 milliseconds = 3600 seconds = 60 minutes = 1 hour
-      let etc = new Date(utc + (3600000 * offset));
-      return etc.toLocaleString();
+
+      const UTCtoLocal = (dateInput) => {
+        let offset = 5; // EST - UTC offset: 5 hours
+        let date = new Date(dateInput);
+        let utc = date.getTime() - (date.getTimezoneOffset() * 60000);
+          //apply the offset between UTC and EST (5 hours)
+          //3600000 milliseconds = 3600 seconds = 60 minutes = 1 hour
+        let etc = new Date(utc + (3600000 * offset));
+        return etc.toLocaleString();
       }
         return (
           <div>
@@ -42,14 +34,4 @@ class MessageDetails extends Component {
     }
 }
 
-function mapStateToProps(state) {
-  // console.log(state, ' MessageDetails state')
-    return {
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(MessageDetails);
+export default MessageDetails;

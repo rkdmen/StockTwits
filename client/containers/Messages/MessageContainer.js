@@ -6,16 +6,13 @@ import MessageDetails from './MessageDetailContainer' ;
 import {  } from '../../actions/searchActions';
 
 
-class Message extends Component {
+class MessageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
           currentStock: '',
           title: ''
         }
-    }
-
-    componentDidMount() {
     }
 
     componentWillReceiveProps(nextProps) {
@@ -60,4 +57,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Message);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageContainer);
