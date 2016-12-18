@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "symbol": "AAPL"
+  },
+  {
+    "symbol": "GB"
+  },
+  {
+    "symbol": "FB"
+  }
+]

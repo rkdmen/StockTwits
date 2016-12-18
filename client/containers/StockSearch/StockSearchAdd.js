@@ -19,24 +19,21 @@ class StockSearchAdd extends Component {
     onInputChange(e){
      e.preventDefault();
      this.setState({symbol: e.target.value});
-     console.log(this.state, ' *****')
-
     }
 
     onFormSubmit(e){
      e.preventDefault();
-     console.log(this.state, ' *****')
      this.props.retriveMsg(this.state.symbol)
      .then(()=>{
        this.props.addStockToJSON(this.state.symbol.toUpperCase())
+
+       .then(()=>
+          this.props.getSymbolJSON()
+        )
      })
      .then(()=>{
-       this.setState({symbol:''});
+       this.setState({symbol:''})
      })
-     .then(()=>{
-       this.props.getSymbolJSON();
-     })
-     .catch((err) => console.log(err))
     }
 
 

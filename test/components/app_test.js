@@ -11,4 +11,8 @@ describe('App', ()=> {
   it('renders something', ()=>{
     expect(component).to.exist;
   });
+
+  it('shows the correct Heading', ()=>{
+    expect(component).to.contain('StockTwits');
+  });
 });

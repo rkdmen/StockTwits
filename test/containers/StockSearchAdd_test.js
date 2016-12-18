@@ -6,9 +6,6 @@ import StockSearchAdd from  '../../client/containers/StockSearch/StockSearchAdd'
 // https://github.com/chaijs/chai-jquery
 // http://chaijs.com/api/assert/
 
-/***********************************************/
-//Below are examples of how test should be written.
-/***********************************************/
 
 //Use describe to group together similar tests
 describe('Search Container', ()=>{
@@ -17,6 +14,10 @@ describe('Search Container', ()=>{
   //renderComponent will return jQuery object that contains react component
     component = renderComponent(StockSearchAdd);
   })
+
+  it('shows the correct Heading', ()=>{
+    expect(component).to.contain('StockTwits');
+  });
 
   // it('has a input area', () => {
   //   expect(component.find('input')).to.exist;

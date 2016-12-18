@@ -6,10 +6,6 @@ import MessageContainer from  '../../client/containers/Messages/MessageContainer
 // https://github.com/chaijs/chai-jquery
 // http://chaijs.com/api/assert/
 
-/***********************************************/
-//Below are examples of how test should be written.
-/***********************************************/
-
 //Use describe to group together similar tests
 describe('MessageContainer', ()=>{
   let component;
@@ -19,7 +15,9 @@ describe('MessageContainer', ()=>{
   })
 
 
-
+  it('shows the correct Heading', ()=>{
+    expect(component).to.contain('StockTwits');
+  });
  // it('has a button ', () => {
  //    expect(component.find('button')).to.exist;
  //  })
