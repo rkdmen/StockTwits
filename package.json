@@ -4,7 +4,7 @@
   "description": "stocktwits coding project",
   "main": "server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "nodemon server/server.js --ignore 'data/*'",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "postinstall": "webpack --config ./webpack.config.js --progress --colors"
 
