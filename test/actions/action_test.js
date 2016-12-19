@@ -1,10 +1,7 @@
 //Action Creator test
 import {renderComponent, expect} from '../test_helper';
-import {retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON} from '../../client/actions/searchActions';
-import {RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON}from '../../client/constants/actionTypes';
-//ActionCreator retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON
-// ActionTypes = RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON
-
+import {retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON, getUserMsg} from '../../client/actions/searchActions';
+import {RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON, GET_USER_MESSAGE}from '../../client/constants/actionTypes';
 
 describe('actions', ()=> {
   describe('retriveMsg', ()=>{
@@ -32,5 +29,10 @@ describe('actions', ()=> {
       expect(action.type).to.equal(DELETE_STOCK_JSON)
     });
   });
-
+  describe('getUserMsg', ()=>{
+    it('has the correct action type', ()=> {
+      const action = getUserMsg();
+      expect(action.type).to.equal(GET_USER_MESSAGE)
+    });
+  });
 })
