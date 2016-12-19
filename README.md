@@ -24,9 +24,8 @@ Deployed Version [stocktwits-app.herokuapp.com](https:///stocktwits-app.herokuap
 
 - Download Repo and
 ```js
-   $ npm i
+   $ npm run build
    $ npm start
-   $ webpack -w `on seperate terminal`
 
   - open localhost:8000 from browser
 

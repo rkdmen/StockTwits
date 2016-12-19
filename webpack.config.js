@@ -32,10 +32,6 @@ let config = {
        test: /\.scss$/,
        include: path.join(__dirname, 'client'),
        loader: "style!css!sass"
-     },
-     {
-      test: /\.(png|jpg|jpeg|gif|woff)$/,
-      loader: 'url-loader?limit=8192'
      }
    ]
  }

@@ -11,7 +11,6 @@ router.get('/stock', (req, res) => {
   request(url, (err, response, body) => {
     if (err) throw new Error(err);
     let parsed = JSON.parse(body);
-    console.log(parsed.response, ' parsed body')
     if(parsed.response.status === 404){
       return; //If incorrect ticker, it will not do anything
     }
