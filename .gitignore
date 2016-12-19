@@ -2,12 +2,15 @@
 node_modules
 bower_components
 npm-debug.log
+*.log
 
-# Bundle files
+## Bundle files
 client/public/bundle.js
 client/public
 bundle.js
+.css
 
-###OSX###
+## OSX
 .DS_Store
-
+.Spotlight-V100
+.Trashes
