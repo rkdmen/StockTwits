@@ -16,6 +16,15 @@ class SingleUserMsg extends React.Component {
         this.setState({didReceivedStockMsg:true})
       }
     }
+      UTCtoLocal(dateInput) {
+        let offset = 5; // EST - UTC offset: 5 hours
+        let date = new Date(dateInput);
+        let utc = date.getTime() - (date.getTimezoneOffset() * 60000);
+        //apply the offset between UTC and EST (5 hours)
+        //3600000 milliseconds = 3600 seconds = 60 minutes = 1 hour
+        let etc = new Date(utc + (3600000 * offset));
+        return etc.toLocaleString();
+      }
 
     render(){
       let selectUserSpan;
@@ -33,8 +42,13 @@ class SingleUserMsg extends React.Component {
                 <div className="singleMsgByUser" key={i}>{
               reactStringReplace(msg.body, /([$])+/g, (match, i) => (
               <span key={i} className="dollarSymbol" >{match}</span>))
-            }</div>
+
+            }
+            <p className='timeStamp'>{this.UTCtoLocal(msg.created_at)}</p>
+            <hr/>
+            </div>
                 )
+
             })
           }
           </div>

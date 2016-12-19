@@ -36,7 +36,6 @@ class StockSearchAdd extends Component {
      })
     }
 
-
     render() {
         return (
           <Form onSubmit={this.onFormSubmit} >
