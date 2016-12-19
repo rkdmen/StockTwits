@@ -36,7 +36,7 @@ class MessageContainer extends Component {
                mentioned={msg.mentioned_users}
                user={msg.user.username}
                time={msg.created_at}
-               avatar={msg.user.avatar_url}
+               avatar={msg.user.avatar_url_ssl}
                source={msg.source.title}
                entities={msg.entities}
                />
