@@ -1,3 +1,6 @@
+## JSON Data folder ##
+data/*
+
 ## Dependency directorys
 node_modules
 bower_components
@@ -10,3 +13,4 @@ bundle.js
 
 ###OSX###
 .DS_Store
+
