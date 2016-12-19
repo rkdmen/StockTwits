@@ -1,14 +1,12 @@
 @import '../modules/variables';
 
 .userName{
-   font-size:15px;
-   font-weight:700;
-   color:black;
-   &:hover{
-        cursor: pointer;
-
+    font-size:15px;
+    font-weight:700;
+    color:black;
+    &:hover{
+      cursor: pointer;
    }
-
 }
 
 .mentionedUser {
