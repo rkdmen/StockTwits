@@ -13,6 +13,7 @@ class SingleUserMsg extends React.Component {
 
     componentWillReceiveProps(nextProps) {
       if(nextProps.stockMsg){
+        //Once message is retrieved, switch to true so that span tag will show.
         this.setState({didReceivedStockMsg:true})
       }
     }
@@ -29,6 +30,9 @@ class SingleUserMsg extends React.Component {
     render(){
       let selectUserSpan;
       if(this.state.didReceivedStockMsg){
+        //Once user selects stock symbol and retrieves message from API
+        //this.state.didReceivedStockMsg becomes true;
+        //It will show the span message as default.
         selectUserSpan = ("Select User to See Messages");
       }
       return(
@@ -40,6 +44,7 @@ class SingleUserMsg extends React.Component {
             this.props.userMsg.msgByUser.map((msg, i) =>{
               return (
                 <div className="singleMsgByUser" key={i}>{
+              //Finds $ symbol and add bold class to it.
               reactStringReplace(msg.body, /([$])+/g, (match, i) => (
               <span key={i} className="dollarSymbol" >{match}</span>))
 
@@ -59,7 +64,6 @@ class SingleUserMsg extends React.Component {
 
 
 function mapStateToProps(state) {
-
     return {
       stockMsg: state.reducer.stock.messages,
       userMsg: state.reducer.userMsg

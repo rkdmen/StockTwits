@@ -15,10 +15,10 @@ class MessageContainer extends Component {
     componentWillReceiveProps(nextProps) {
       this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title});
     }
+
     render() {
-     let showTitle;
-     let showSymbol;
-     let selectUserSpan;
+      let showTitle;
+      let showSymbol;
       if(this.state.title){
         showTitle = (<h4>{this.state.title}</h4>);
         showSymbol = (<h5>{this.state.currentStock}</h5>);
@@ -46,7 +46,6 @@ class MessageContainer extends Component {
               )
             })
           }
-
           </div>
           )
     }

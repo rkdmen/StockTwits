@@ -23,6 +23,8 @@ class MessageDetails extends React.Component {
       }
 
       isItBullishBearish(prop){
+        //checks if user tweeted as Bullish or Bearish
+        //if null, it will not do anything
         if(prop){
             if (prop.basic === "Bullish"){
               return (
@@ -38,8 +40,10 @@ class MessageDetails extends React.Component {
       }
 
       clickUser(user){
+        //Click user name, retrieve specific user's previous twits
         this.props.getUserMsg(user);
       }
+
     render() {
 
         return (
@@ -52,14 +56,13 @@ class MessageDetails extends React.Component {
               <span><img src={this.props.avatar} alt="avatar"/></span>
             </div>
             <p className="messageDetail">{
+              //Finds $ symbol and add bold class to it.
               reactStringReplace(this.props.message, /([$])+/g, (match, i) => (
               <span key={i} className="dollarSymbol" >{match}</span>))
             }
             </p>
             <span>  {this.isItBullishBearish(this.props.entities.sentiment)}</span>
-
             <p className='timeStamp'>{this.UTCtoLocal(this.props.time)}</p>
-
           </div>
 
           )

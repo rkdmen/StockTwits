@@ -6,9 +6,6 @@ import UserMessage from './UserMessage';
 import { Col, Row, Grid } from 'react-bootstrap';
 
 class Main extends React.Component {
-  constructor(props){
-    super(props);
-  }
   render(){
     return (
           <Grid className="main-container">
