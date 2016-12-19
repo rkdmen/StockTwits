@@ -2,9 +2,7 @@ import axios from 'axios';
 import * as type from '../constants/ActionTypes';
 
 export function retriveMsg(symbol){
-
   const request = axios.get('api/stock/', {params: {symbol} });
-
   return {
     type: type.RETRIEVE_MSG,
     payload: request
