@@ -1,10 +1,9 @@
 import React from 'react';
-import {Navbar, Nav} from 'react-bootstrap';
 
 const Header = () => (
-    <Nav>
-      <h3 className="header text-center"><span className="font-stock">S</span>tockTwits</h3>
-    </Nav>
+    <div>
+      <h3 className="header"><span className="font-stock">S</span>tockTwits</h3>
+    </div>
 )
 
-export default Header
+export default Header;

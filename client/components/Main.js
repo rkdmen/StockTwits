@@ -9,8 +9,8 @@ class Main extends React.Component {
   }
   render(){
     return (
-          <Grid>
-            <Row className="main-container">
+          <Grid className="main-container">
+            <Row>
               <Col xs={12} md={4}>
                 <Search />
               </Col>

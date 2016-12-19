@@ -9,12 +9,9 @@ class MessageDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {}
-        // console.log(this.props, ' this props in messageDetail')
     }
 
-    render() {
-
-      const UTCtoLocal = (dateInput) => {
+      UTCtoLocal(dateInput) {
         let offset = 5; // EST - UTC offset: 5 hours
         let date = new Date(dateInput);
         let utc = date.getTime() - (date.getTimezoneOffset() * 60000);
@@ -23,13 +20,18 @@ class MessageDetails extends Component {
         let etc = new Date(utc + (3600000 * offset));
         return etc.toLocaleString();
       }
+
+
+    render() {
+
         return (
-          <div className="messageDetail">
+          <div className="messageDetailContainer">
             <h5>User: {this.props.user}</h5>
             <span><img src={this.props.avatar} alt="avatar"/></span>
-            <p>{this.props.message}</p>
-            <h6>{UTCtoLocal(this.props.time)}</h6>
-            <hr/>
+            <p className="messageDetail">{
+              this.props.message}
+            </p>
+            <p className='timeStamp'>{this.UTCtoLocal(this.props.time)}</p>
           </div>
           )
     }

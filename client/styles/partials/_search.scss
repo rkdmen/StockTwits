@@ -1,29 +1,40 @@
 @import '../modules/variables';
 
-.main-search {
-  width:100%;
-}
 
 .searchBar {
-  width: 100%
+    width: 100%;
+    margin-top:50px;
+
+    @media #{$mq-xs, $mq-sm}{
+    // margin-top:50px;
+    }
 }
 
 .symbolList {
-  // display:inline;
-  margin-top: 4px;
-  background-color: $moneyGreen;
-  color: #FFFFFF;
-  width: 100%;
-  height: auto;
-  font-family: Helvetica;
-  font-size: 16px;
-  font-weight: 300;
+  @media #{$mq-xs, $mq-sm}{
+
+      span a {
+        font-size:14px !important;
+        text-align: center !important;
+          &:hover{
+            background: $hoverGreen;
+          }
+      }
+    }
+    margin-top: 4px;
+    background-color: $moneyGreen;
+    color: white;
+    width: 100%;
+    height: auto;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 300;
 
   a {
     display: block;
-    padding: 0 0 0 50px;
-    line-height: 38px;
-    color: #FFFFFF;
+    padding-left:50px;
+    line-height: 30px;
+    color: white;
     text-decoration: none;
   }
 
@@ -34,7 +45,7 @@
     text-align:center;
     padding-left:0px;
     &:hover{
-      background: #7EC29C;
+      background: $hoverGreen;
       opacity:1 !important;
       cursor: pointer;
     }
@@ -46,8 +57,8 @@
     span.left {
       width:80%;
       &:hover {
-      background: #7EC29C;
-      color: #FFFFFF;
+      background: $hoverGreen;
+      color: white;
       cursor: pointer;
      }
     }
@@ -62,7 +73,7 @@
 }
 
 .watchListEmpty {
-  text-align: center;
-  background-color: white  !important;
-  color: black !important;
+    text-align: center;
+    background-color: white  !important;
+    color: black !important;
 }

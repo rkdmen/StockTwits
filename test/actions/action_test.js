@@ -3,7 +3,6 @@ import {renderComponent, expect} from '../test_helper';
 import {retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON} from '../../client/actions/searchActions';
 import {RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON}from '../../client/constants/actionTypes';
 //ActionCreator retriveMsg, addStockToJSON, getSymbolJSON, deleteSymbolJSON
-
 // ActionTypes = RETRIEVE_MSG, ADD_STOCK_JSON, GET_STOCK_JSON, DELETE_STOCK_JSON
 
 
@@ -33,6 +32,5 @@ describe('actions', ()=> {
       expect(action.type).to.equal(DELETE_STOCK_JSON)
     });
   });
-
 
 })

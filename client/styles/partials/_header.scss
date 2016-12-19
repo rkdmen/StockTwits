@@ -7,8 +7,16 @@
     height: 50px;
     left:0;
     top:0;
-    position:relative;
+    position:fixed;
     margin:0 auto;
+    width:100%;
+    z-index: 999;
+    clear:both;
+    text-align:center;
+    @media #{$mq-xs, $mq-sm}{
+        height: 40px;
+        font-size:20px;
+    }
 }
 
 .emptySpace {

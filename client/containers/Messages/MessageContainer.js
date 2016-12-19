@@ -19,12 +19,15 @@ class MessageContainer extends Component {
     }
     render() {
      let showTitle;
+     let showSymbol;
       if(this.state.title){
-        showTitle = (<h4>{this.state.title}, {this.state.currentStock}</h4>);
+        showTitle = (<h4>{this.state.title}</h4>);
+        showSymbol = (<h5>{this.state.currentStock}</h5>);
       }
         return (
-          <div>
+          <div className="message-container">
           {showTitle}
+          {showSymbol}
           {!this.props.message ? 'No Stock Selected':
             this.props.message.map((msg, i)=>{
              return (

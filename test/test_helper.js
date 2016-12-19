@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import jsdom from 'jsdom';
-import chai, { expect } from 'chai';
+import chai, { expect, assert, should } from 'chai';
 import chaiJquery from 'chai-jquery';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';

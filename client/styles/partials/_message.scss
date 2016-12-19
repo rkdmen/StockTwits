@@ -1,11 +1,33 @@
 @import '../modules/variables';
 
-.messageDetail {
+
+.message-container{
+    margin-top:50px;
+
+}
+
+.messageDetailContainer {
+    word-wrap: break-word;
+    height:auto;
+    border-top: 0.1px $lightGrey solid;
+    border-bottom: 0.1px $lightGrey solid;
+    @media #{$mq-xs, $mq-sm, $mq-m}{
+      width:100%;
+    }
+
   &:hover{
-    background-color: #E6E6E6;
+    background-color: $lightGrey;
   }
   img {
     float:left;
     margin-right:10px;
+    border-radius:10px;
   }
+}
+
+.timeStamp {
+    color:#565678;
+    font-size:12px;
+    font-weight:bold;
+    text-align:right;
 }

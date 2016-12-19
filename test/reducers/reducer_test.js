@@ -9,7 +9,7 @@ describe('stock Reducers', ()=> {
     expect(stockReducer(undefined, {})).to.eql({});
   })
 
-  it('handle action type RETRIEVE_MSG', ()=> {
+  xit('handle action type RETRIEVE_MSG', ()=> {
     const action = {
       type: RETRIEVE_MSG,
       payload:'AAPL'
