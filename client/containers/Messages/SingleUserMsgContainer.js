@@ -13,7 +13,7 @@ class SingleUserMsg extends React.Component {
           <p className="singleMsgByUserId">{!this.props.userMsg? "" : <span>Twits by {this.props.userMsg.selectedUser}</span>}</p>
           <div className='main-messageByUser'>
           {
-            !this.props.userMsg ? <span>Select User to See Messages</span> :
+            !this.props.userMsg ? '' :
             this.props.userMsg.msgByUser.map((msg, i) =>{
               return (
                 <div className="singleMsgByUser" key={i}>{

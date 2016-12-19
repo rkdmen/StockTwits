@@ -22,7 +22,7 @@ class MessageContainer extends Component {
       if(this.state.title){
         showTitle = (<h4>{this.state.title}</h4>);
         showSymbol = (<h5>{this.state.currentStock}</h5>);
-        selectUserSpan = (<span className="selectUserToSeeMoreMobile">Select User to See Messages</span>);
+        selectUserSpan = (<span className="selectUserToSeeMore">Select User to See Messages</span>);
       }
         return (
           <div className="message-container">

@@ -23,6 +23,7 @@
 
 .symbolList {
   @media #{$mq-xs, $mq-sm}{
+      width: 90% ;
       span a {
         font-size:14px !important;
         text-align: center !important;
@@ -35,7 +36,7 @@
     background-color: $moneyGreen;
     color: white;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     height: auto;
     font-family: Helvetica;
     font-size: 16px;

@@ -4,12 +4,16 @@
    font-size:15px;
    font-weight:700;
    color:black;
+   &:hover{
+        cursor: pointer;
+
+   }
 
 }
 
 .mentionedUser {
-   font-size:12px;
-   font-weight:450;
+   font-size:14px;
+   font-weight:600;
 }
 .message-container{
     @media #{$mq-xs, $mq-sm}{
@@ -17,7 +21,7 @@
       margin-top:10px;
       margin: 0 auto;
       min-height: 0;
-      max-height: 300px;
+      // max-height: 300px;
       overflow: auto;
     }
     .seeMoreMsg {

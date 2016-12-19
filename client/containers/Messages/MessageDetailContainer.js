@@ -44,7 +44,7 @@ class MessageDetails extends React.Component {
 
         return (
           <div className="messageDetailContainer">
-            <p onClick={()=>this.clickUser(this.props.user)}  className="userName">{this.props.user}
+            <p onClick={()=>this.clickUser(this.props.user)} ><span className="userName">{this.props.user}</span>
               <span className='mentionedUser'>&nbsp;&nbsp;&nbsp;{this.props.mentioned}</span>
               <span className='viaSource'>via {this.props.source}</span>
             </p>
