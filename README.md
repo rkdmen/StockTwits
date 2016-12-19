@@ -22,18 +22,21 @@ User may keep searching message for new ticker after 5 saved ticker, but it will
 ### How to use Application:
 Deployed Version [stocktwits-app.herokuapp.com](https:///stocktwits-app.herokuapp.com/)
 
-- Download Repo
+- Download Repo and
 ```js
-  - $ npm i
-  - $ npm start
-  - $ webpack -w on seperate terminal
+   $ npm i
+   $ npm start
+   $ webpack -w on seperate terminal
+
+  - open localhost:8000 from browser
+
 ```
 
-- Open localhost:8000 from browser
 
 - For mocha/chai Testing
-  - npm run test on seperate terminal
-
+```js
+  $ npm run test on seperate terminal
+```
 
 
 
