@@ -12,6 +12,21 @@
    font-weight:450;
 }
 .message-container{
+    @media #{$mq-xs, $mq-sm}{
+      width:90%;
+      margin-top:10px;
+      margin: 0 auto;
+      min-height: 0;
+      max-height: 300px;
+      overflow: auto;
+    }
+    .seeMoreMsg {
+        display:none;
+        text-align:right !important;
+        color:red;
+        float:right;
+    }
+
     margin-top:50px;
 }
 

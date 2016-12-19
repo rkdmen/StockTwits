@@ -3,9 +3,10 @@
 .watch-btn{
     display: none;
     @media #{$mq-xs, $mq-sm}{
-      width:100%;
+      margin: 0 auto;
+      width:90%;
       display:block;
-      background-color:#202F4A;
+      background-color:#264C87;
       color:white;
       font-weight:bold;
     }
@@ -22,7 +23,6 @@
 
 .symbolList {
   @media #{$mq-xs, $mq-sm}{
-
       span a {
         font-size:14px !important;
         text-align: center !important;
@@ -34,33 +34,31 @@
     margin-top: 4px;
     background-color: $moneyGreen;
     color: white;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     height: auto;
     font-family: Helvetica;
     font-size: 16px;
     font-weight: 300;
-
-  a {
-    display: block;
-    padding-left:50px;
-    line-height: 30px;
-    color: white;
-    text-decoration: none;
-  }
-
-  .delBtn {
-    width:100%;
-    color:red;
-    opacity:.5 !important;
-    text-align:center;
-    padding-left:0px;
-    &:hover{
-      background: $hoverGreen;
-      opacity:1 !important;
-      cursor: pointer;
+    a {
+      display: block;
+      padding-left:50px;
+      line-height: 30px;
+      color: white;
+      text-decoration: none;
     }
-  }
-
+   .delBtn {
+      width:100%;
+      color:red;
+      opacity:.5 !important;
+      text-align:center;
+      padding-left:0px;
+      &:hover{
+        background: $hoverGreen;
+        opacity:1 !important;
+        cursor: pointer;
+      }
+    }
     span {
       display:inline-block;
     }

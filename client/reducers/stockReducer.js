@@ -20,7 +20,6 @@ export function stockReducer(state = {}, action) {
       case type.DELETE_STOCK_JSON:
         return Object.assign({}, state, {
         });
-
       default:
           return state;
     }

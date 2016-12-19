@@ -3,6 +3,7 @@ import { Button, Panel } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import reactStringReplace from 'react-string-replace';
+import { getUserMsg } from '../../actions/searchActions';
 
 
 class MessageDetails extends React.Component {
@@ -35,11 +36,15 @@ class MessageDetails extends React.Component {
             }
           }
       }
+
+      clickUser(user){
+        this.props.getUserMsg(user);
+      }
     render() {
 
         return (
           <div className="messageDetailContainer">
-            <p className="userName">{this.props.user}
+            <p onClick={()=>this.clickUser(this.props.user)}  className="userName">{this.props.user}
               <span className='mentionedUser'>&nbsp;&nbsp;&nbsp;{this.props.mentioned}</span>
               <span className='viaSource'>via {this.props.source}</span>
             </p>
@@ -56,8 +61,14 @@ class MessageDetails extends React.Component {
             <p className='timeStamp'>{this.UTCtoLocal(this.props.time)}</p>
 
           </div>
+
           )
     }
 }
 
-export default MessageDetails;
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getUserMsg }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(MessageDetails);

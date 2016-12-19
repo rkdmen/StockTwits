@@ -1,0 +1,54 @@
+@import '../modules/variables';
+
+
+.singleMsgByUser {
+    padding: 15px 3px 15px 3px;
+    margin-bottom:5px;
+    word-wrap: break-word;
+}
+
+.singleMsgByUserId {
+    margin-top:25px;
+    padding-top:5px;
+    font-size:16px;
+    font-weight:600;
+    text-align:center;
+}
+
+.selectUserToSeeMoreMobile {
+    padding-top:8px;
+    float:right;
+    font-weight:600;
+
+}
+
+.main-messageByUser {
+    @media #{$mq-xs, $mq-sm}{
+
+      span {
+        display:none;
+      }
+      margin: 0 auto;
+      width:90%;
+      margin-top:10px;
+      margin-bottom:15px;
+      min-height: 0;
+      max-height: 135px;
+      overflow:auto;
+    }
+    margin-top:25px;
+    min-height: 0;
+    max-height: 300px;
+    overflow:auto;
+}
+
+.hideForMobile {
+    @media #{$mq-xs, $mq-sm}{
+      display:none !important;
+    }
+}
+.hideForDesktop {
+    @media #{$mq-m, $mq-lg, $mq-xlg}{
+      display:none !important;
+    }
+}

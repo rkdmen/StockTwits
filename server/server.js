@@ -22,8 +22,10 @@ app.use(cookieParser());
 
 const dataRoutes = require('./config/dataRoutes');
 const stockRoutes = require('./config/stockRoutes');
+const userRoutes = require('./config/userRoutes');
 app.use('/api', dataRoutes);
 app.use('/api', stockRoutes);
+app.use('/api', userRoutes);
 
 
 // webpack loads index.html, looks for script src

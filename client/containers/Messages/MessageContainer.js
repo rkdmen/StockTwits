@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Button, Panel } from 'react-bootstrap';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MessageDetails from './MessageDetailContainer' ;
 
@@ -19,27 +18,34 @@ class MessageContainer extends Component {
     render() {
      let showTitle;
      let showSymbol;
+     let selectUserSpan;
       if(this.state.title){
         showTitle = (<h4>{this.state.title}</h4>);
         showSymbol = (<h5>{this.state.currentStock}</h5>);
+        selectUserSpan = (<span className="selectUserToSeeMoreMobile">Select User to See Messages</span>);
       }
         return (
           <div className="message-container">
+          {selectUserSpan}
           {showTitle}
           {showSymbol}
+
+          <span className="seeMoreMsg">Select User to See Messages</span>
           {!this.props.message ? 'No Stock Selected':
             this.props.message.map((msg, i)=>{
              return (
-               <MessageDetails
-               key={i}
-               message={msg.body}
-               mentioned={msg.mentioned_users}
-               user={msg.user.username}
-               time={msg.created_at}
-               avatar={msg.user.avatar_url_ssl}
-               source={msg.source.title}
-               entities={msg.entities}
-               />
+              <div key={i}>
+                 <MessageDetails
+                 key={i}
+                 message={msg.body}
+                 mentioned={msg.mentioned_users}
+                 user={msg.user.username}
+                 time={msg.created_at}
+                 avatar={msg.user.avatar_url_ssl}
+                 source={msg.source.title}
+                 entities={msg.entities}
+                 />
+               </div>
               )
             })
           }
