@@ -7,6 +7,8 @@ User may visit ticker from saved watch list by clicking.
 
 User may keep searching message for new ticker after 5 saved ticker, but it will not be saved on to data.
 
+User may click on username to see list of user messages.
+
 ### The Tech Stack:
 
 - Client:
