@@ -33,7 +33,7 @@ class MessageContainer extends Component {
                <MessageDetails
                key={i}
                message={msg.body}
-               mentioned={msg.mentioned_users[0]}
+               mentioned={msg.mentioned_users}
                user={msg.user.username}
                time={msg.created_at}
                avatar={msg.user.avatar_url}
@@ -50,7 +50,6 @@ class MessageContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state, ' STATE!@#!@#');
     return {
       message: state.reducer.stock.messages,
       stock: state.reducer.stock
