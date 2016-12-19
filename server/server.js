@@ -1,18 +1,19 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+'use strict';
+let express = require('express');
+let bodyParser = require('body-parser');
+let logger = require('morgan');
+let path = require('path');
+let cookieParser = require('cookie-parser');
 
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
-var config = require('../webpack.config');
+let webpack = require('webpack');
+let webpackDevMiddleware = require('webpack-dev-middleware');
+let webpackHotMiddleware = require('webpack-hot-middleware');
+let config = require('../webpack.config');
 
-var router = express.Router();
+let router = express.Router();
 
 //initiate express
-var app = express();
+let app = express();
 
 //middleware
 app.use(bodyParser.json());
@@ -40,7 +41,7 @@ app.get('*', function(req, res){
 
 //set and run the port and server
 app.set('port',process.env.PORT || 8000);
-var port = app.get('port');
+let port = app.get('port');
 app.listen(port);
 console.log("Server listening on PORT", port);
 
