@@ -23,9 +23,11 @@ User may keep searching message for new ticker after 5 saved ticker, but it will
 Deployed Version [stocktwits-app.herokuapp.com](https:///stocktwits-app.herokuapp.com/)
 
 - Download Repo
-  - run npm install
-  - run npm start
-  - run webpack -w on seperate terminal
+```js
+  - $ npm i
+  - $ npm start
+  - $ webpack -w on seperate terminal
+```
 
 - Open localhost:8000 from browser
 
