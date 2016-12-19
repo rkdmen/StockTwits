@@ -8,12 +8,14 @@ let APP_DIR = path.resolve(__dirname, 'client');
 
 let config = {
   //entry point for the app
+
   entry: [
     APP_DIR + '/index.js'
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: "/"
   },
   debug: true,
   module: {
@@ -30,6 +32,10 @@ let config = {
        test: /\.scss$/,
        include: path.join(__dirname, 'client'),
        loader: "style!css!sass"
+     },
+     {
+      test: /\.(png|jpg|jpeg|gif|woff)$/,
+      loader: 'url-loader?limit=8192'
      }
    ]
  }

@@ -6,15 +6,12 @@ let request = require('request');
 let fs = require('fs');
 
 router.post('/dataJSON', (req, res) => {
-  let title;
   let symb;
   let symbol = req.body.symbol;
-
   let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
-  console.log(JSONData, ' <=====JSON')
 
   if(JSONData.length < 5){
-      JSONData.push({symbol:symbol, title:title});
+      JSONData.push({symbol:symbol});
     fs.writeFile('./data/stock-data.json', JSON.stringify(JSONData, null, 2), 'utf-8', (err) => {
       if (err) {
         console.error(err);
@@ -29,7 +26,6 @@ router.post('/dataJSON', (req, res) => {
 
 router.get('/dataJSON', (req, res) => {
   let JSONData = JSON.parse(fs.readFileSync('./data/stock-data.json', 'utf8'));
-  console.log(JSONData, ' <= JSON')
   res.send(JSONData);
 });
 

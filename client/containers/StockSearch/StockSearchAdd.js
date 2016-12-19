@@ -47,13 +47,13 @@ class StockSearchAdd extends Component {
               value={this.state.symbol}
               type="text"
             />
+            <Button className="watch-btn" type="submit">WATCH</Button>
           </Form>
           )
     }
 }
 
 function mapStateToProps(state) {
-    console.log(state, ' stockSearchAdd State');
     return {
       stock: state.reducer.stock
     }

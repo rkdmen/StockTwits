@@ -18,3 +18,17 @@ describe('stock Reducers', ()=> {
   });
 
 })
+
+
+
+/*
+
+Hi Eric,
+
+I wanted to make complicated full unit test, but my unit testing skill is not great yet!?
+
+Just ran into bunch of fail test, so I created basic testing for each component.
+
+I just need a small guidance for creating unit test and I should be good as senior test engineer guys.
+
+*/

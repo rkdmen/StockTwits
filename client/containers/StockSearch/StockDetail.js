@@ -9,7 +9,7 @@ class StockDetail extends Component {
         super(props);
         this.state = {
           watchList:[]
-        }
+        };
       this.deleteStockJSON = this.deleteStockJSON.bind(this);
       this.onItemClick = this.onItemClick.bind(this);
     }
@@ -19,20 +19,19 @@ class StockDetail extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      console.log(nextProps, ' nextProp StockDetail')
-      this.setState({watchList:nextProps.mySymbol})
+      this.setState({watchList:nextProps.mySymbol});
     }
 
     deleteStockJSON(e){
       this.props.deleteSymbolJSON(e)
       .then(()=>{
         this.props.getSymbolJSON();
-      })
+      });
     }
 
     onItemClick(event) {
       this.props.retriveMsg(event);
-    }
+    };
 
     render() {
       let emptyWatchList;
@@ -41,7 +40,6 @@ class StockDetail extends Component {
       } else {
         emptyWatchList;
       }
-      console.log(this.state, ' this.state stockdetail')
         return (
           <div className='symbolList'>
             {emptyWatchList}
@@ -66,7 +64,6 @@ class StockDetail extends Component {
     }
 }
 function mapStateToProps(state) {
-  console.log(state, ' stockdetail state');
     return {
       mySymbol : state.reducer.stock.mySymbol
     }

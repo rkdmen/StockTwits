@@ -1,5 +1,15 @@
 @import '../modules/variables';
 
+.watch-btn{
+    display: none;
+    @media #{$mq-xs, $mq-sm}{
+      width:100%;
+      display:block;
+      background-color:#202F4A;
+      color:white;
+      font-weight:bold;
+    }
+  }
 
 .searchBar {
     width: 100%;

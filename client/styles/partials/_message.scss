@@ -1,9 +1,18 @@
 @import '../modules/variables';
 
+.userName{
+   font-size:15px;
+   font-weight:700;
+   color:black;
 
+}
+
+.mentionedUser {
+   font-size:12px;
+   font-weight:450;
+}
 .message-container{
     margin-top:50px;
-
 }
 
 .messageDetailContainer {
@@ -30,4 +39,31 @@
     font-size:12px;
     font-weight:bold;
     text-align:right;
+    padding:0;
+}
+
+.viaSource {
+    float:right;
+    color:#101621;
+    font-size:11px;
+    font-weight:bold;
+    padding-top:5px;
+    // text-align:left;
+}
+
+.dollarSymbol {
+    margin-top:-52px;
+    font-weight:bold;
+    color: black;
+}
+
+.bullish {
+    font-weight:bold;
+    color: #21E120;
+
+}
+
+.bearish {
+    font-weight:bold;
+    color:#F5002D;
 }

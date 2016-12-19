@@ -1,7 +1,7 @@
 import * as type from '../constants/ActionTypes';
 
 export function stockReducer(state = {}, action) {
-  console.log(action.payload, ' payload!')
+  // console.log(action.payload, ' payload!')
     switch (action.type) {
       case type.RETRIEVE_MSG:
         if(action.payload.data.symbol === undefined){

@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Button, Panel } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {  } from '../../actions/searchActions';
+import reactStringReplace from 'react-string-replace';
 
 
-class MessageDetails extends Component {
+class MessageDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {}
@@ -21,17 +21,40 @@ class MessageDetails extends Component {
         return etc.toLocaleString();
       }
 
-
+      isItBullishBearish(prop){
+        if(prop){
+            if (prop.basic === "Bullish"){
+              return (
+                <span className='bullish'>Feeling Bullish ↗🐮</span>
+                )
+            }
+            if (prop.basic === "Bearish"){
+              return (
+                <span className='bearish'>Feeling Bearish ↘🐻</span>
+                )
+            }
+          }
+      }
     render() {
 
         return (
           <div className="messageDetailContainer">
-            <h5>User: {this.props.user}</h5>
-            <span><img src={this.props.avatar} alt="avatar"/></span>
-            <p className="messageDetail">{
-              this.props.message}
+            <p className="userName">{this.props.user}
+              <span className='mentionedUser'>&nbsp;&nbsp;&nbsp;{this.props.mentioned}</span>
+              <span className='viaSource'>via {this.props.source}</span>
             </p>
+            <div>
+              <span><img src={this.props.avatar} alt="avatar"/></span>
+            </div>
+            <p className="messageDetail">{
+              reactStringReplace(this.props.message, /([$])+/g, (match, i) => (
+              <span key={i} className="dollarSymbol" >{match}</span>))
+            }
+            </p>
+            <span>  {this.isItBullishBearish(this.props.entities.sentiment)}</span>
+
             <p className='timeStamp'>{this.UTCtoLocal(this.props.time)}</p>
+
           </div>
           )
     }

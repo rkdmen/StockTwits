@@ -14,7 +14,6 @@ class MessageContainer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-      console.log(nextProps, ' Message Next Prop');
       this.setState({currentStock:nextProps.stock.symbol, title: nextProps.stock.title});
     }
     render() {
@@ -32,11 +31,14 @@ class MessageContainer extends Component {
             this.props.message.map((msg, i)=>{
              return (
                <MessageDetails
+               key={i}
                message={msg.body}
+               mentioned={msg.mentioned_users[0]}
                user={msg.user.username}
                time={msg.created_at}
                avatar={msg.user.avatar_url}
-               key={i}
+               source={msg.source.title}
+               entities={msg.entities}
                />
               )
             })
@@ -48,7 +50,7 @@ class MessageContainer extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state, ' Message state')
+  console.log(state, ' STATE!@#!@#');
     return {
       message: state.reducer.stock.messages,
       stock: state.reducer.stock
