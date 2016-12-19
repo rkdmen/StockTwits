@@ -1,6 +1,3 @@
-## JSON Data folder ##
-data/*
-
 ## Dependency directorys
 node_modules
 bower_components
