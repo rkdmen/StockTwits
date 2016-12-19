@@ -16,9 +16,9 @@
 }
 
 .selectUserToSeeMore {
+    text-align:center;
     color:#687a5c;
     padding-top:8px;
-    float:right;
     font-weight:600;
     font-size:14px;
     @media #{$mq-xs, $mq-sm}{

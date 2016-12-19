@@ -6,11 +6,25 @@ import reactStringReplace from 'react-string-replace';
 class SingleUserMsg extends React.Component {
     constructor(props){
       super(props);
+      this.state = {
+        didReceivedStockMsg: false
+      }
     }
+
+    componentWillReceiveProps(nextProps) {
+      if(nextProps.stockMsg){
+        this.setState({didReceivedStockMsg:true})
+      }
+    }
+
     render(){
+      let selectUserSpan;
+      if(this.state.didReceivedStockMsg){
+        selectUserSpan = ("Select User to See Messages");
+      }
       return(
         <div>
-          <p className="singleMsgByUserId">{!this.props.userMsg? "" : <span>Twits by {this.props.userMsg.selectedUser}</span>}</p>
+          <p className="singleMsgByUserId">{!this.props.userMsg? <span className="selectUserToSeeMore">{selectUserSpan}</span> : <span>Twits by {this.props.userMsg.selectedUser}</span>}</p>
           <div className='main-messageByUser'>
           {
             !this.props.userMsg ? '' :
@@ -31,7 +45,9 @@ class SingleUserMsg extends React.Component {
 
 
 function mapStateToProps(state) {
+
     return {
+      stockMsg: state.reducer.stock.messages,
       userMsg: state.reducer.userMsg
     }
 }

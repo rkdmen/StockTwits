@@ -13,7 +13,7 @@ class StockSearchAdd extends Component {
           title: ''
         }
       this.onInputChange = this.onInputChange.bind(this);
-      this.onFormSubmit = this.onFormSubmit.bind(this)
+      this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onInputChange(e){
@@ -32,7 +32,7 @@ class StockSearchAdd extends Component {
         )
      })
      .then(()=>{
-       this.setState({symbol:''})
+       this.setState({symbol:''});
      })
     }
 
