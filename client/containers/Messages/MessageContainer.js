@@ -27,25 +27,25 @@ class MessageContainer extends Component {
           <div className="message-container">
           {showTitle}
           {showSymbol}
+          <div className="message-container-inside">
+            {!this.props.message ? 'No Stock Selected':
+              this.props.message.map((msg, i)=>{
+               return (
+                   <MessageDetails
+                   key={i}
+                   message={msg.body}
+                   mentioned={msg.mentioned_users}
+                   user={msg.user.username}
+                   time={msg.created_at}
+                   avatar={msg.user.avatar_url_ssl}
+                   source={msg.source.title}
+                   entities={msg.entities}
+                   />
+                )
+              })
+            }
+            </div>
 
-          {!this.props.message ? 'No Stock Selected':
-            this.props.message.map((msg, i)=>{
-             return (
-              <div key={i}>
-                 <MessageDetails
-                 key={i}
-                 message={msg.body}
-                 mentioned={msg.mentioned_users}
-                 user={msg.user.username}
-                 time={msg.created_at}
-                 avatar={msg.user.avatar_url_ssl}
-                 source={msg.source.title}
-                 entities={msg.entities}
-                 />
-               </div>
-              )
-            })
-          }
           </div>
           )
     }
