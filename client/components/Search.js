@@ -1,16 +1,15 @@
-import React from 'react';
-import StockSearchAdd from '../containers/StockSearch/StockDetail';
-import StockDetail from '../containers/StockSearch/StockSearchAdd';
-
+import React from "react";
+import StockSearchAdd from "../containers/StockSearch/StockDetail";
+import StockDetail from "../containers/StockSearch/StockSearchAdd";
 
 class Search extends React.Component {
-  render(){
+  render() {
     return (
-        <div className="main-search" >
-          <StockDetail />
-          <StockSearchAdd />
-        </div>
-      )
+      <div className="main-search">
+        <StockDetail />
+        <StockSearchAdd />
+      </div>
+    );
   }
 }
 

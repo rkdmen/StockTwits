@@ -1,9 +1,9 @@
-'use strict';
-let express = require('express');
+"use strict";
+let express = require("express");
 let router = express.Router();
-let request = require('request')
+let request = require("request");
 
-router.get('/user', (req, res) => {
+router.get("/user", (req, res) => {
   //Retrieve specific user's previous twits
 
   let user = req.query.user;
@@ -11,7 +11,7 @@ router.get('/user', (req, res) => {
   request(url, (err, response, body) => {
     if (err) throw new Error(err);
     res.send(body);
-  })
+  });
 });
 
 module.exports = router;

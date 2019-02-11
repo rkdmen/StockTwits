@@ -1,15 +1,14 @@
-import {renderComponent, expect} from '../test_helper';
+import { renderComponent, expect } from "../test_helper";
 
-import App from '../../client/components/App.js';
+import App from "../../client/components/App.js";
 
-describe('App', ()=> {
+describe("App", () => {
   let component;
-  before(()=> {
+  before(() => {
     component = renderComponent(App);
   });
 
-  it('renders something', ()=>{
+  it("renders something", () => {
     expect(component).to.exist;
   });
-
 });

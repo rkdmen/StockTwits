@@ -1,13 +1,13 @@
-import React from 'react';
-import SingleUserMsg from '../containers/Messages/SingleUserMsgContainer';
+import React from "react";
+import SingleUserMsg from "../containers/Messages/SingleUserMsgContainer";
 
 class UserMessage extends React.Component {
-  render(){
+  render() {
     return (
-    <div >
-      <SingleUserMsg />
-    </div>
-    )
+      <div>
+        <SingleUserMsg />
+      </div>
+    );
   }
 }
 

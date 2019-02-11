@@ -1,14 +1,14 @@
-import {renderComponent, expect} from '../test_helper';
+import { renderComponent, expect } from "../test_helper";
 
-import Header from '../../client/components/Header.js';
+import Header from "../../client/components/Header.js";
 
-describe('Header', ()=> {
+describe("Header", () => {
   let component;
-  before(()=> {
+  before(() => {
     component = renderComponent(Header);
   });
 
-  it('shows the correct Heading', ()=>{
-    expect(component).to.contain('StockTwits');
+  it("shows the correct Heading", () => {
+    expect(component).to.contain("StockTwits");
   });
 });

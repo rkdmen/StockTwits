@@ -1,18 +1,17 @@
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import React from "react";
+import { Route, IndexRoute } from "react-router";
 
-import App from './components/App';
-import Main from './components/Main';
+import App from "./components/App";
+import Main from "./components/Main";
 
-import NotFoundSection from './components/NotFoundSection';
+import NotFoundSection from "./components/NotFoundSection";
 
 export default (
-    <Route path="/" component={App}>
-        <IndexRoute component={Main}/>
-        {/*
+  <Route path="/" component={App}>
+    <IndexRoute component={Main} />
+    {/*
           <Route path="pathName" component={}/>
         */}
-        <Route path='*' component={NotFoundSection}/>
-
-    </Route>
-)
+    <Route path="*" component={NotFoundSection} />
+  </Route>
+);

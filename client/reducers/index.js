@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import { stockReducer } from './stockReducer';
-import { userClickReducer } from './userClickReducer';
+import { combineReducers } from "redux";
+import { stockReducer } from "./stockReducer";
+import { userClickReducer } from "./userClickReducer";
 
 const rootReducer = combineReducers({
   stock: stockReducer,
