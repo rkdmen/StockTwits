@@ -22,7 +22,7 @@ User may click on username to see list of user messages.
   - JSON
 
 ### How to use Application:
-Deployed Version [stocktwits-app.herokuapp.com](https:///stocktwits-app.herokuapp.com/)
+Deployed Version [stocktwits-app.herokuapp.com](https://bit.ly/stockTwits)
 
 - Download Repo and
 ```js
