@@ -1,5 +1,4 @@
 import React from "react";
-import { Button, Panel } from "react-bootstrap";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import reactStringReplace from "react-string-replace";
@@ -10,19 +9,6 @@ class MessageDetails extends React.Component {
     super(props);
     this.state = {};
   }
-
-  // function timeConverter(UNIX_timestamp){
-  //   var a = new Date(UNIX_timestamp * 1000);
-  //   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  //   var year = a.getFullYear();
-  //   var month = months[a.getMonth()];
-  //   var date = a.getDate();
-  //   var hour = a.getHours();
-  //   var min = a.getMinutes();
-  //   var sec = a.getSeconds();
-  //   var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-  //   return time;
-  // }
 
   UTCtoLocal(dateInput) {
     let offset = 5; // EST - UTC offset: 5 hours
@@ -37,13 +23,11 @@ class MessageDetails extends React.Component {
   isItBullishBearish(prop) {
     //checks if user tweeted as Bullish or Bearish
     //if null, it will not do anything
-    if (prop) {
-      if (prop.basic === "Bullish") {
-        return <span className="bullish">Feeling Bullish ↗🐮</span>;
-      }
-      if (prop.basic === "Bearish") {
-        return <span className="bearish">Feeling Bearish ↘🐻</span>;
-      }
+    if (prop?.basic === "Bullish") {
+      return <span className="bullish">Feeling Bullish ↗🐮</span>;
+    }
+    if (prop?.basic === "Bearish") {
+      return <span className="bearish">Feeling Bearish ↘🐻</span>;
     }
   }
 

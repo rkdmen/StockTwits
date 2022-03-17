@@ -9,9 +9,6 @@ import NotFoundSection from "./components/NotFoundSection";
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Main} />
-    {/*
-          <Route path="pathName" component={}/>
-        */}
     <Route path="*" component={NotFoundSection} />
   </Route>
 );
